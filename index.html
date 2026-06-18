@@ -6,10 +6,8 @@
             var contentSections = document.getElementsByClassName("content");
             for (var i = 0; i < contentSections.length; i++) {
                 if (targetSectionName == contentSections[i].id) {
-                    console.log("revealing", contentSections[i].id);
                     contentSections[i].style.display = "block";
                 } else {
-                    console.log("hiding", contentSections[i]);
                     contentSections[i].style.display = "none";
                 }
             }
@@ -25,6 +23,7 @@
             }
             table {
                 border: 1px solid white;
+                border-spacing: 0px;;
                 height: 60ch;
                 margin: 0px auto;
             }
@@ -62,6 +61,13 @@
             #footer {
                 height: 1ch;
             }
+            #menu {
+                border-bottom: 0px;
+            }
+            #banners {
+                border-top: 0px;
+                height: 1ch;
+            }
         </style>
     </head>
     <body>
@@ -70,21 +76,30 @@
                 <td id="menu-header">
                     <p><b>Menu</b></p>
                 </td>
-                <td id="content-box" rowspan="2">
+                <td id="content-box" rowspan="3">
                     <p class="content" id="home">
                         <b>Welcome to my web page</b>
                         <br/>
                         <img id="skull" src="./skull.gif"/>
                     </p>
-                    <p class="content" id="links"><a href="https://github.com/dorin131">GitHub</a></p>
-                    <p class="content" id="contact"><a href="https://www.linkedin.com/in/dorin131/">LinkedIn</a></p>
+                    <p class="content" id="links">
+                        <a href="https://github.com/dorin131">GitHub</a>
+                    </p>
+                    <p class="content" id="contact">
+                        <a href="https://www.linkedin.com/in/dorin131/">LinkedIn</a>
+                    </p>
                 </td>
             </tr>
             <tr>
-                <td>
-                    <p><a href="#" class="menu" onclick="show(event)">Home</a></p>
-                    <p><a href="#" class="menu" onclick="show(event)">Links</a></p>
-                    <p><a href="#" class="menu" onclick="show(event)">Contact</a></p>
+                <td id="menu">
+                    <p><a href="#" onclick="show(event)">Home</a></p>
+                    <p><a href="#" onclick="show(event)">Links</a></p>
+                    <p><a href="#" onclick="show(event)">Contact</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td id="banners">
+                    <img src="./ie_static.gif"/>
                 </td>
             </tr>
             <tr>
